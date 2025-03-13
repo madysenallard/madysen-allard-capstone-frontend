@@ -1,8 +1,10 @@
-import Conservation from "../Conservation/Conservation.scss";
+import "../Conservation/Conservation.scss";
+import Header from "../../Components/Header/Header";
 
 function Conservation() {
   return (
     <section className="conservation">
+      <Header />
       <h1 className="conservation__title">
         Protecting Our Oceans: Surf with Purpose
       </h1>

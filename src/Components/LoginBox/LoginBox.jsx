@@ -2,13 +2,13 @@ import axios from "axios";
 import userIcon from "../../Assets/Icons/user.svg";
 import accountIcon from "../../Assets/Icons/account.svg";
 import lockIcon from "../../Assets/Icons/lock.svg";
-import loginBox from "../LoginBox/LoginBox.scss";
+import "../LoginBox/LoginBox.scss";
 
 function LoginBox() {
   return (
     <section className="loginBox__card">
       <img src={accountIcon} alt="account user icon" />
-      <form className="loginBox__form" onSubmit={handleSubmit}>
+      <form className="loginBox__form">
         <div className="loginBox__fields">
           <div className="loginBox__field-container">
             <img

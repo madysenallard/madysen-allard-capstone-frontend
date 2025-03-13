@@ -1,14 +1,12 @@
 import axios from "axios";
-import userIcon from "../../Assets/Icons/user.svg";
 import accountIcon from "../../Assets/Icons/account.svg";
-import lockIcon from "../../Assets/Icons/lock.svg";
-import profileBox from "../ProfileBox/ProfileBox.scss";
+import "../ProfileBox/ProfileBox.scss";
 
 function ProfileBox() {
   return (
     <section className="profileBox__card">
-      <img src={profilePic} alt="user profile photo" />
-      <form className="profileBox__form" onSubmit={handleSubmit}>
+      <img src={accountIcon} alt="user profile photo" />
+      <form className="profileBox__form">
         <div className="profileBox__fields">
           <div className="profileBox__field-container">
             <input

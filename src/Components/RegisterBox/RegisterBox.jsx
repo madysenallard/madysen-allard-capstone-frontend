@@ -2,13 +2,13 @@ import userIcon from "../../Assets/Icons/user.svg";
 import lockIcon from "../../Assets/Icons/lock.svg";
 import mailIcon from "../../Assets/Icons/mail.svg";
 import registerIcon from "../../Assets/Icons/register.svg";
-import RegisterBox from "../RegisterBox/RegisterBox.scss";
+import "../RegisterBox/RegisterBox.scss";
 
 function RegisterBox() {
   return (
     <section className="registerBox__card">
       <img src={registerIcon} alt="register icon" />
-      <form className="registerBox__form" onSubmit={handleSubmit}>
+      <form className="registerBox__form">
         <div className="registerBox__fields">
           <div className="registerBox__field-container">
             <img

@@ -1,10 +1,10 @@
 import "../Login/Login.scss";
 import LoginBox from "../../Components/LoginBox/LoginBox";
 
-function Login() {
+function Login({ setToken }) {
   return (
     <section className="login">
-      <LoginBox />
+      <LoginBox setToken={setToken} />
     </section>
   );
 }

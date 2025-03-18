@@ -1,4 +1,3 @@
-import Header from "../../Components/Header/Header";
 import connectPic from "../../Assets/Photos/connect-pic.jpg";
 import conservationPic from "../../Assets/Photos/conservation-pic.jpg";
 import homePic from "../../Assets/Photos/home-pic.jpg";
@@ -35,7 +34,6 @@ function HomePage() {
 
   return (
     <>
-      <Header />
       <h1>Breakpoint</h1>
       <h3>A Surfer's Guide</h3>
       <h2>About Us</h2>

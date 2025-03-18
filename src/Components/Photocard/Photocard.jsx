@@ -2,25 +2,29 @@ import "../Photocard/Photocard.scss";
 import axios from "axios";
 import { useState, useEffect } from "react";
 
-function Photocard({ id }) {
-  const [photo, setPhoto] = useState(null);
+function Photocard({ id, photo }) {
+  const [photoData, setPhotoData] = useState(photo);
 
   useEffect(() => {
-    getPhoto();
-  }, [id]);
+    if (!photoData) {
+      async function getPhoto() {
+        try {
+          const response = await axios.get(
+            `http://localhost:8080/api/photos/${id}`
+          );
+          setPhotoData(response.data);
+        } catch (error) {
+          console.error("Error fetching photo:", error);
+        }
+      }
 
-  async function getPhoto() {
-    try {
-      const response = await axios.get(
-        `http://localhost:8080/api/photos/${id}`
-      );
-      setPhoto(response.data);
-    } catch (error) {
-      console.error("Error:", error);
+      getPhoto();
     }
+  }, [id, photoData]);
+
+  if (!photoData) {
+    return <p>Loading...</p>;
   }
-  //loading screen while component is rendering
-  if (!photo) return <p>Loading...</p>;
 
   return (
     <div className="photoCard">

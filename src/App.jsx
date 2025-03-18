@@ -8,6 +8,7 @@ import Profile from "./Pages/Profile/Profile.jsx";
 import Login from "./Pages/Login/Login.jsx";
 import Register from "./Pages/Register/Register.jsx";
 import LocationsMap from "./Pages/LocationsMap/LocationsMap.jsx";
+import Connect from "./Pages/Connect/Connect.jsx";
 
 function App() {
   return (
@@ -16,7 +17,7 @@ function App() {
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/Maps+Weather" element={<LocationsMap />} />
-          {/* <Route path="/Connect" element={<Connect />} /> */}
+          <Route path="/Connect" element={<Connect />} />
           <Route path="/conservation" element={<Conservation />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />

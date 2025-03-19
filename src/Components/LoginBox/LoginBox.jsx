@@ -29,7 +29,7 @@ function LoginBox({ setToken }) {
           const password = e.target.password.value;
 
           if (!username || !password) {
-            alert("need username and password");
+            alert("please fill out all fields");
             return;
           }
 

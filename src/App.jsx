@@ -21,6 +21,12 @@ function App() {
 
   const isLoggedIn = !!token && !!user;
 
+  const handleLogout = () => {
+    localStorage.removeItem("token");
+    setToken(null);
+    setUser(null);
+  };
+
   useEffect(() => {
     getProfile();
     async function getProfile() {
@@ -64,7 +70,10 @@ function App() {
           <Route path="/conservation" element={<Conservation />} />
           <Route path="/login" element={<Login setToken={setToken} />} />
           <Route path="/register" element={<Register />} />
-          <Route path="/profile" element={<Profile user={user} />} />
+          <Route
+            path="/profile"
+            element={<Profile user={user} handleLogout={handleLogout} />}
+          />
           <Route path="*" element={<Navigate to="/" />} />
         </Routes>
       </BrowserRouter>

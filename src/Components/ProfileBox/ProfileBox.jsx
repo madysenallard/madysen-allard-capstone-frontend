@@ -1,8 +1,16 @@
 import axios from "axios";
 import accountIcon from "../../Assets/Icons/account.svg";
 import "../ProfileBox/ProfileBox.scss";
+import { useNavigate } from "react-router-dom";
 
-function ProfileBox() {
+function ProfileBox({ user, handleLogout }) {
+  const navigate = useNavigate();
+
+  const handleLogoutClick = () => {
+    handleLogout();
+    navigate("/");
+  };
+
   return (
     <section className="profileBox__card">
       <img src={accountIcon} alt="user profile photo" />
@@ -19,13 +27,15 @@ function ProfileBox() {
             <input
               className="profileBox__field"
               type="text"
+              value={user?.username || ""}
               placeholder="Username"
             />
           </div>
           <div className="profileBox__field-container">
             <input
               className="profileBox__field"
-              type="text"
+              type="email"
+              value={user?.email || ""}
               placeholder="Email"
             />
           </div>
@@ -37,7 +47,13 @@ function ProfileBox() {
             />
           </div>
         </div>
-        <button className="profileBox__btn">Log Out</button>
+        <button
+          type="button"
+          className="profileBox__btn"
+          onClick={handleLogoutClick}
+        >
+          Log Out
+        </button>
       </form>
     </section>
   );

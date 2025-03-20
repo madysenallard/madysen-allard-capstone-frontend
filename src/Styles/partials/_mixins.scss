@@ -11,3 +11,10 @@
     @content;
   }
 }
+
+@mixin font-style($size, $line-height, $weight, $font-family) {
+  font-size: $size;
+  line-height: $line-height;
+  font-weight: $weight;
+  font-family: $font-family;
+}

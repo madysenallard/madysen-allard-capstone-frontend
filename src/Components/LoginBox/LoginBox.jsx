@@ -16,7 +16,11 @@ function LoginBox({ setToken }) {
 
   return (
     <section className="loginBox__card">
-      <img src={accountIcon} alt="account user icon" />
+      <img
+        className="loginBox__account-icon"
+        src={accountIcon}
+        alt="account user icon"
+      />
       <form
         className="loginBox__form"
         ref={formRef}

@@ -16,7 +16,11 @@ function RegisterBox() {
 
   return (
     <section className="registerBox__card">
-      <img src={registerIcon} alt="register icon" />
+      <img
+        className="registerBox__icon"
+        src={registerIcon}
+        alt="register icon"
+      />
       <form
         className="registerBox__form"
         ref={formRef}

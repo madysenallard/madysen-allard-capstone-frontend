@@ -1,0 +1,93 @@
+@use "../../Styles/partials/variables" as *;
+@use "../../Styles/partials/mixins" as *;
+
+.registerBox {
+  &__card {
+    background-color: rgba(225, 247, 255, 0.6);
+    border-radius: 0.625rem;
+    padding: 2rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    text-align: center;
+    width: 90%;
+    max-width: 400px;
+
+    @include tablet {
+      max-width: 450px;
+    }
+
+    @include desktop {
+      max-width: 400px;
+    }
+  }
+
+  &__icon {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin-bottom: 1.5rem;
+  }
+
+  &__user-profile,
+  &__lock {
+    width: 24px;
+    height: 24px;
+  }
+
+  &__form,
+  &__fields {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+  }
+
+  &__field-container {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  &__field {
+    width: 100%;
+    padding: 0.75rem;
+    border: none;
+    border-radius: 0.3rem;
+    font-size: 1rem;
+    color: $dark-blue-text;
+    background-color: $white;
+
+    &:focus {
+      outline: none;
+      border: 2px solid $light-blue;
+      box-shadow: 0 0 5px $light-blue;
+    }
+  }
+
+  &__btn {
+    padding: 0.75rem;
+    border: none;
+    border-radius: 0.3rem;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    background-color: $dark-blue-background;
+    color: $white;
+    margin-top: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+  }
+
+  &__link {
+    text-decoration: none;
+    font-size: 1rem;
+    color: $light-blue;
+    margin-top: 0.5rem;
+    transition: color 0.3s ease;
+
+    span {
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.1rem;
+    }
+  }
+}

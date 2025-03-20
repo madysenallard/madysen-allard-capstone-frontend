@@ -8,34 +8,41 @@ function LoggedInHeader() {
   const navigate = useNavigate();
 
   return (
-    <section className="header">
-      <div className="header__logo-wrapper">
-        <NavLink to="/" className="header__container--home">
+    <section className="loggedInHeader">
+      <div className="loggedInHeader__logo-wrapper">
+        <NavLink to="/" className="loggedInHeader__container--home">
           <img
-            className="header__container--Logo"
+            className="loggedInHeader__container--Logo"
             src={surfLogo}
             alt="surf logo"
           />
         </NavLink>
-        <div className="header__links">
-          <NavLink className="header__links--home" to="/">
+        <div className="loggedInHeader__links">
+          <NavLink className="loggedInHeader__links--home" to="/">
             Home
           </NavLink>
         </div>
       </div>
-      <div className="header__links">
-        <NavLink className="header__links--maps-weather" to="/maps+weather">
+      <div className="loggedInHeader__links">
+        <NavLink
+          className="loggedInHeader__links--maps-weather"
+          to="/maps+weather"
+        >
           Maps & Weather
         </NavLink>
-        <NavLink className="header__links--connect" to="/connect">
+        <NavLink className="loggedInHeader__links--connect" to="/connect">
           Connect
         </NavLink>
-        <NavLink className="header__links--nature" to="/conservation">
+        <NavLink className="loggedInHeader__links--nature" to="/conservation">
           Protect our Nature
         </NavLink>
       </div>
       <Link to="/profile">
-        <img src={userPhoto} alt="profile icon" />
+        <img
+          className="loggedInHeader__profile-icon"
+          src={userPhoto}
+          alt="profile icon"
+        />
       </Link>
     </section>
   );

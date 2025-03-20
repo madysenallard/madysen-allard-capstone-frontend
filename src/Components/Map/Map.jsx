@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
+import React, { useState, useEffect } from "react";
+import { MapContainer, TileLayer, Marker, Popup, useMap } from "react-leaflet";
 import axios from "axios";
 
 const BASE_URL = import.meta.env.VITE_BASE_URL; // Your backend server URL
@@ -11,6 +11,18 @@ function Map() {
   const [center, setCenter] = useState([0, 0]);
   const [selectedSpot, setSelectedSpot] = useState(null);
   const [error, setError] = useState(null);
+  const [zoom, setZoom] = useState(3);
+
+  //update the map dynamically
+  const MapUpdater = ({ center, zoom }) => {
+    const map = useMap();
+
+    useEffect(() => {
+      map.setView(center, zoom); // Update the map's center and zoom level
+    }, [center, zoom, map]);
+
+    return null;
+  };
 
   // Fetch city coordinates using your backend's geocoding endpoint
   const fetchCityCoordinates = async () => {
@@ -39,8 +51,18 @@ function Map() {
   // Fetch nearby beaches using your backend's nearby-beaches endpoint
   const fetchNearbyBeaches = async (lat, lng, radius = 10000) => {
     try {
-      const response = await axios.get(
-        `${BASE_URL}/api/nearby-beaches?lat=${lat}&lng=${lng}&radius=${radius}`
+      const response = await axios.post(
+        `${BASE_URL}/api/beaches/nearby-beaches`,
+        {
+          lat,
+          lng,
+          radius,
+        },
+        {
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
       );
 
       // Process the response to create beach objects
@@ -78,12 +100,14 @@ function Map() {
       return null;
     }
   };
-
   // Handle city search
   const handleSearch = async () => {
     const coordinates = await fetchCityCoordinates();
     if (coordinates) {
       const { lat, lng } = coordinates;
+
+      setCenter([lat, lng]);
+      setZoom(12);
 
       // Fetch nearby beaches
       const beaches = await fetchNearbyBeaches(lat, lng);
@@ -123,9 +147,10 @@ function Map() {
 
       <MapContainer
         center={center}
-        zoom={7}
+        zoom={zoom}
         style={{ height: "600px", width: "100%" }}
       >
+        <MapUpdater center={center} zoom={zoom} />
         <TileLayer
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
           attribution="© OpenStreetMap contributors"

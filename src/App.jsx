@@ -66,7 +66,10 @@ function App() {
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/maps+weather" element={<LocationsMap />} />
-          <Route path="/connect" element={<Connect />} />
+          <Route
+            path="/connect"
+            element={<Connect isLoggedIn={isLoggedIn} />}
+          />
           <Route path="/conservation" element={<Conservation />} />
           <Route path="/login" element={<Login setToken={setToken} />} />
           <Route path="/register" element={<Register />} />

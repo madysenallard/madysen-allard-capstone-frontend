@@ -2,7 +2,7 @@ import "../Photocard/Photocard.scss";
 import axios from "axios";
 import { useState, useEffect } from "react";
 
-function Photocard({ id, photo }) {
+function Photocard({ photo }) {
   const [photoData, setPhotoData] = useState(photo);
 
   useEffect(() => {
@@ -10,7 +10,7 @@ function Photocard({ id, photo }) {
       async function getPhoto() {
         try {
           const response = await axios.get(
-            `http://localhost:8080/api/photos/${id}`
+            `http://localhost:8080/api/photos/${photo.id}`
           );
           setPhotoData(response.data);
         } catch (error) {
@@ -20,7 +20,7 @@ function Photocard({ id, photo }) {
 
       getPhoto();
     }
-  }, [id, photoData]);
+  }, [photo, photoData]);
 
   if (!photoData) {
     return <p>Loading...</p>;
@@ -29,18 +29,22 @@ function Photocard({ id, photo }) {
   return (
     <div className="photoCard">
       <div className="photoCard__img-wrapper">
-        <img className="photoCard__img" src={photo.photo} />
+        <img
+          className="photoCard__img"
+          src={photoData.photo_url}
+          alt={photoData.username}
+        />
       </div>
       <div className="photoCard__info-box">
-        <h4 className="photoCard__username">{photo.username}</h4>
-        <p className="photoCard__likes">{photo.likes}</p>
+        <h4 className="photoCard__username">{photoData.username}</h4>
         <p className="photoCard__date">
-          {new Date(photo.timestamp).toLocaleDateString("en-US", {
+          {new Date(photoData.timestamp).toLocaleDateString("en-US", {
             year: "numeric",
             month: "2-digit",
             day: "2-digit",
           })}
         </p>
+        <p className="photoCard__caption">{photoData.caption}</p>
       </div>
     </div>
   );

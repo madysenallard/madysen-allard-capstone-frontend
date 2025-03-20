@@ -1,6 +1,5 @@
 import userIcon from "../../Assets/Icons/user.svg";
 import lockIcon from "../../Assets/Icons/lock.svg";
-import mailIcon from "../../Assets/Icons/mail.svg";
 import registerIcon from "../../Assets/Icons/register.svg";
 import "../RegisterBox/RegisterBox.scss";
 import { Link, useNavigate } from "react-router-dom";
@@ -15,11 +14,6 @@ function RegisterBox() {
   const navigate = useNavigate();
   const formRef = useRef(null);
 
-  const validateEmail = (email) => {
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    return emailRegex.test(email);
-  };
-
   return (
     <section className="registerBox__card">
       <img src={registerIcon} alt="register icon" />
@@ -33,16 +27,10 @@ function RegisterBox() {
           setSignedup(false);
 
           const username = e.target.username.value;
-          const email = e.target.email.value;
           const password = e.target.password.value;
 
-          if (!username || !email || !password) {
+          if (!username || !password) {
             alert("you must fill out all fields");
-            return;
-          }
-
-          if (!validateEmail(email)) {
-            setError("Invalid email format.");
             return;
           }
 
@@ -50,7 +38,6 @@ function RegisterBox() {
             // all we do here is signup.
             await axios.post("http://localhost:8080/api/register", {
               username,
-              email,
               password,
             });
             setSignedup(true);
@@ -80,15 +67,6 @@ function RegisterBox() {
               type="text"
               name="username"
               placeholder="Username"
-            />
-          </div>
-          <div className="registerBox__field-container">
-            <img className="registerBox__mail" src={mailIcon} alt="mail icon" />
-            <input
-              className="registerBox__field"
-              type="email"
-              name="email"
-              placeholder="Email"
             />
           </div>
           <div className="registerBox__field-container">

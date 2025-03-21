@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { MapContainer, TileLayer, Marker, Popup, useMap } from "react-leaflet";
 import axios from "axios";
+import "../Map/Map.scss";
 
 const BASE_URL = import.meta.env.VITE_BASE_URL; // Your backend server URL
 const worldWeatherApiKey = import.meta.env.VITE_WORLD_WEATHER_API_KEY;
@@ -134,22 +135,19 @@ function Map() {
   };
 
   return (
-    <div>
-      <input
-        type="text"
-        value={city}
-        onChange={(e) => setCity(e.target.value)}
-        placeholder="Search for a city"
-      />
-      <button onClick={handleSearch}>Search</button>
-
-      {error && <p style={{ color: "red" }}>{error}</p>}
-
-      <MapContainer
-        center={center}
-        zoom={zoom}
-        style={{ height: "600px", width: "100%" }}
-      >
+    <div className="map">
+      <div className="map__search-box">
+        <input
+          type="text"
+          className="map__search"
+          value={city}
+          onChange={(e) => setCity(e.target.value)}
+          placeholder="Search for a city"
+        />
+        <button onClick={handleSearch}>Search</button>
+        {error && <p style={{ color: "red" }}>{error}</p>}
+      </div>
+      <MapContainer center={center} zoom={zoom} className="map__container">
         <MapUpdater center={center} zoom={zoom} />
         <TileLayer
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
@@ -180,7 +178,6 @@ function Map() {
           </Marker>
         ))}
       </MapContainer>
-
       {selectedSpot && (
         <div>
           <h3>{selectedSpot.name}</h3>

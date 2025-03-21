@@ -38,7 +38,11 @@ function ProfileBox({ user, handleLogout }) {
 
   return (
     <section className="profileBox__card">
-      <img src={accountIcon} alt="user profile photo" />
+      <img
+        className="profileBox__icon"
+        src={accountIcon}
+        alt="user profile photo"
+      />
       <form className="profileBox__form" onSubmit={handleSave}>
         <div className="profileBox__fields">
           <div className="profileBox__field-container">

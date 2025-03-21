@@ -1,0 +1,85 @@
+@use "../../Styles/partials/variables" as *;
+@use "../../Styles/partials/mixins" as *;
+
+.map {
+  margin-top: 2rem;
+  overflow: hidden;
+
+  &__search-box {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1rem;
+
+    @include tablet {
+      justify-content: flex-start;
+    }
+  }
+
+  &__search {
+    padding: 0.75rem;
+    border: 1px solid $dark-blue-text;
+    border-radius: 8px;
+    font-size: 1rem;
+    margin-right: 0.5rem;
+    width: 70%;
+
+    @include tablet {
+      width: 50%;
+    }
+  }
+
+  button {
+    background: linear-gradient(45deg, #0077b6, #00a8e8);
+    color: $white;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out;
+
+    &:hover {
+      background: linear-gradient(45deg, #00a8e8, #0077b6);
+      transform: scale(1.1);
+    }
+
+    &:active {
+      transform: scale(0.9);
+    }
+  }
+
+  &__container {
+    height: 500px;
+    width: 100%;
+    border-radius: 1.25rem;
+  }
+
+  .leaflet-popup-content {
+    font-size: 1rem;
+    color: $black;
+
+    b {
+      color: $dark-blue-text;
+    }
+  }
+}
+
+.selected-spot {
+  margin-top: 2rem;
+  padding: 1rem;
+  background-color: #f7f7f7;
+  border-radius: 1.25rem;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+
+  h3 {
+    font-size: 1.5rem;
+    color: $dark-blue-text;
+    margin-bottom: 1rem;
+  }
+
+  p {
+    font-size: 1rem;
+    color: $black;
+    margin-bottom: 0.5rem;
+  }
+}

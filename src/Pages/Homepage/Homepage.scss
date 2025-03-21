@@ -10,16 +10,34 @@
     padding: 2rem;
   }
 
+  &__hero {
+    border-radius: 1.25rem;
+    color: $dark-blue-text;
+    padding: 1rem;
+    margin-top: 4rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    height: 450px;
+    position: relative;
+    overflow: hidden;
+    background: url("../../Assets/Photos/sea-hero.jpg") center/cover no-repeat;
+
+    @include tablet {
+      padding-left: 3rem;
+    }
+  }
+
   &__title {
     font-size: 3.5rem;
     font-style: italic;
     letter-spacing: 0.2rem;
-    margin-top: 6rem;
+    padding-top: 1.25rem;
+    width: 100%;
 
     @include tablet {
       font-size: 5rem;
       letter-spacing: 0.3rem;
-      margin-top: 4rem;
     }
   }
 
@@ -35,13 +53,32 @@
     }
   }
 
-  &__desc-title {
-    padding: 1rem 0.5rem;
-    padding-top: 2rem;
-    font-size: 1.25rem;
+  &__about {
+    font-size: 1.15rem;
+    line-height: 1.65rem;
+    padding-top: 4.5rem;
+    color: $white;
 
     @include tablet {
       font-size: 1.5rem;
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      padding: 3rem;
+      width: 70%;
+    }
+    @include desktop {
+    }
+  }
+
+  &__desc-title {
+    padding: 1rem 0.5rem;
+    padding-top: 2rem;
+    font-size: 1.5rem;
+    font-weight: 600;
+
+    @include tablet {
+      font-size: 2rem;
       padding-top: 2.5rem;
     }
   }
@@ -71,6 +108,8 @@
     transition: all 0.7s ease-in;
     overflow: hidden;
     margin-bottom: 1rem;
+    border: 3px solid transparent;
+    background-clip: padding-box;
     @include tablet {
       flex: 0.5;
       max-height: 600px;
@@ -115,6 +154,7 @@
     background-color: rgba(0, 0, 0, 0.6);
     padding: 1rem;
     z-index: 1;
+    width: 100%;
 
     @include tablet {
       padding: 1.5rem;
@@ -144,25 +184,34 @@
   }
 
   &__bottom-box {
-    max-width: 900px;
+    border-radius: 20px;
+  }
+
+  &__main-content {
     margin: 0 auto;
+    display: flex;
+    background-color: #f7f7f7;
+    padding-left: 2rem;
+    border-radius: 1.25rem;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 1rem;
   }
 
   &__bottom-title {
     font-size: 1.5rem;
-    font-weight: 500;
-    padding-bottom: 0.5rem;
-    color: #0077b6;
-    text-align: center;
-    margin-bottom: 2rem;
-    position: relative;
-    z-index: 1;
+    font-weight: 600;
+    padding: 50px 0;
+    color: $black;
+
     @include tablet {
-      font-size: 2rem;
+      font-size: 2.5rem;
     }
   }
   &__surf-list {
     list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
   }
 
   &__list-item {
@@ -174,6 +223,8 @@
     position: relative;
     border-left: 5px solid #0077b6;
     padding: 1rem;
+    height: 165px;
+    background-color: #fff;
 
     &:hover {
       transform: translateY(-5px);
@@ -194,8 +245,30 @@
 
   &__item-desc {
     font-size: 1rem;
+    color: #555;
+    font-weight: 500;
     @include tablet {
       font-size: 1.125rem;
+    }
+  }
+
+  &__cta-btn {
+    background: linear-gradient(45deg, #0077b6, #00a8e8);
+    color: $white;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out;
+
+    &:hover {
+      background: linear-gradient(45deg, #00a8e8, #0077b6);
+      transform: scale(1.1);
+    }
+
+    &:active {
+      transform: scale(0.9);
     }
   }
 }

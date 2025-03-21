@@ -12,10 +12,6 @@
     padding: 1.5rem;
   }
 
-  @include desktop {
-    padding: 2rem;
-  }
-
   &__loading,
   &__error,
   &__empty {

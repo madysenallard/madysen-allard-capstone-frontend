@@ -2,29 +2,120 @@
 @use "../../Styles/partials/mixins" as *;
 
 .connect {
-  padding: 1rem;
   background-color: #f7f7f7;
+  padding: 1rem;
 
-  @include tablet {
-    padding: 1.5rem;
+  &__header-section {
+    text-align: center;
+    margin-top: 4rem;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+
+    @include tablet {
+      margin-bottom: 3rem;
+    }
   }
 
-  @include desktop {
-    padding: 2rem;
+  &__title {
+    font-size: 2.5rem;
+    color: $dark-blue-text;
+    margin-bottom: 0.5rem;
+
+    @include tablet {
+      font-size: 3rem;
+    }
+  }
+
+  &__subtitle {
+    font-size: 1.25rem;
+    color: #555;
+
+    @include tablet {
+      font-size: 1.5rem;
+    }
+  }
+
+  &__header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-left: 1rem;
+
+    @include tablet {
+      justify-content: flex-start;
+      margin-left: 16.5%;
+    }
   }
 
   &__post-btn {
-    background-color: $dark-blue-text;
+    background: linear-gradient(45deg, #0077b6, #00a8e8);
     color: $white;
     padding: 0.75rem 1.5rem;
     border: none;
     font-size: 0.875rem;
     cursor: pointer;
-    margin-bottom: 1.5rem;
-    transition: background-color 0.3s ease;
+    transition: all 0.3s ease-in-out;
+    border-radius: 0.3rem;
 
     &:hover {
-      background-color: #005f8c;
+      background: linear-gradient(45deg, #00a8e8, #0077b6);
+      transform: scale(1.05);
+    }
+
+    &:active {
+      transform: scale(0.95);
+    }
+  }
+
+  &__search-bar {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    flex: 1;
+    max-width: 300px;
+
+    input {
+      flex: 1;
+      padding: 0.75rem 1rem;
+      border: 1px solid #ddd;
+      border-radius: 0.3rem;
+      font-size: 0.875rem;
+      color: $dark-blue-text;
+      background-color: $white;
+      transition: border-color 0.3s ease;
+
+      &:focus {
+        outline: none;
+        border-color: $light-blue;
+        box-shadow: 0 0 5px $light-blue;
+      }
+
+      &::placeholder {
+        color: #999;
+      }
+    }
+  }
+
+  &__search-btn {
+    background: linear-gradient(45deg, #0077b6, #00a8e8);
+    color: $white;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 0.3rem;
+    font-size: 0.875rem;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+
+    &:hover {
+      background: linear-gradient(45deg, #00a8e8, #0077b6);
+      transform: scale(1.05);
+    }
+
+    &:active {
+      transform: scale(0.95);
     }
   }
 
@@ -42,11 +133,15 @@
   }
 
   &__modal-content {
-    background-color: $white;
-    padding: 1.5rem;
+    background-color: rgba(225, 247, 255, 0.6);
+    border-radius: 0.625rem;
+    padding: 3rem 2.5rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     width: 90%;
     max-width: 400px;
     position: relative;
+    text-align: center;
+    font-family: sans-serif;
   }
 
   &__modal-close {
@@ -68,37 +163,60 @@
     margin-bottom: 1rem;
   }
 
-  form {
+  &__modal-form {
     display: flex;
     flex-direction: column;
     gap: 1rem;
 
     input[type="file"] {
-      padding: 0.5rem;
-      border: 1px solid #ddd;
-      font-size: 0.875rem;
-    }
-
-    textarea {
-      padding: 0.5rem;
-      border: 1px solid #ddd;
-      font-size: 0.875rem;
-      resize: vertical;
-      min-height: 100px;
-    }
-
-    button {
-      background-color: $dark-blue-text;
-      color: $white;
-      padding: 0.75rem 1.5rem;
+      padding: 0.625rem;
       border: none;
-      font-size: 0.875rem;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
+      border-radius: 0.3rem;
+      font-size: 1rem;
+      color: $dark-blue-text;
+      background-color: $white;
 
-      &:hover {
-        background-color: #005f8c;
+      &:focus {
+        outline: none;
+        border-color: $light-blue;
+        box-shadow: 0 0 5px $light-blue;
       }
+    }
+  }
+
+  &__modal-form-text {
+    padding: 0.625rem;
+    border: none;
+    border-radius: 0.3rem;
+    font-size: 1rem;
+    color: $dark-blue-text;
+    background-color: $white;
+    resize: vertical;
+    min-height: 100px;
+
+    &:focus {
+      outline: none;
+      border-color: $light-blue;
+      box-shadow: 0 0 5px $light-blue;
+    }
+  }
+
+  &__modal-btn {
+    background: linear-gradient(45deg, #0077b6, #00a8e8);
+    color: $white;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    font-size: 0.875rem;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+
+    &:hover {
+      background: linear-gradient(45deg, #00a8e8, #0077b6);
+      transform: scale(1.05);
+    }
+
+    &:active {
+      transform: scale(0.95);
     }
   }
 }

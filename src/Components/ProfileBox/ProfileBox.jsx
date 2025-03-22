@@ -2,6 +2,8 @@ import accountIcon from "../../Assets/Icons/account.svg";
 import "../ProfileBox/ProfileBox.scss";
 import { useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
+import arrowIcon from "../../Assets/Icons/arrowback.svg";
 
 function ProfileBox({ user, handleLogout }) {
   const navigate = useNavigate();
@@ -38,6 +40,14 @@ function ProfileBox({ user, handleLogout }) {
 
   return (
     <section className="profileBox__card">
+      <Link to="/" className="profileBox__link">
+        <img
+          className="profileBox__arrow-icon"
+          src={arrowIcon}
+          alt="arrow icon"
+        />
+        <p className="profileBox__title">My Profile</p>
+      </Link>
       <img
         className="profileBox__icon"
         src={accountIcon}

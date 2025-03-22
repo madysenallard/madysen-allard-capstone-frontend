@@ -30,7 +30,7 @@ function Header() {
           Connect
         </NavLink>
         <NavLink className="header__links--nature" to="/conservation">
-          Protect our Nature
+          Protect our Ocean
         </NavLink>
       </div>
       <div className="header__btn-wrapper">

@@ -17,14 +17,22 @@
 
   &__search {
     padding: 0.75rem;
-    border: 1px solid $dark-blue-text;
-    border-radius: 8px;
+    border: none;
+    border-radius: 0.3rem;
     font-size: 1rem;
     margin-right: 0.5rem;
     width: 70%;
+    color: $dark-blue-text;
+    background-color: $white;
 
     @include tablet {
       width: 50%;
+    }
+
+    &:focus {
+      outline: none;
+      border: 2px solid $light-blue;
+      box-shadow: 0 0 5px $light-blue;
     }
   }
 

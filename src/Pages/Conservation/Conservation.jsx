@@ -3,16 +3,18 @@ import "../Conservation/Conservation.scss";
 function Conservation() {
   return (
     <section className="conservation">
-      <h1 className="conservation__title">
-        Protecting Our Oceans: Surf with Purpose
-      </h1>
-      <h3 className="conservation__description">
-        The ocean isn't just our playground, it's a living ecosystem that needs
-        our guardianship. As surfers, we experience firsthand the magic of
-        riding waves in pristine waters. This deep connection gives us both the
-        privilege and responsibility to protect the marine environment that
-        brings us so much joy.
-      </h3>
+      <div className="conservation__header">
+        <h1 className="conservation__title">
+          Protecting Our Oceans: Surf with Purpose
+        </h1>
+        <h3 className="conservation__description">
+          The ocean isn't just our playground, it's a living ecosystem that
+          needs our guardianship. As surfers, we experience firsthand the magic
+          of riding waves in pristine waters. This deep connection gives us both
+          the privilege and responsibility to protect the marine environment
+          that brings us so much joy.
+        </h3>
+      </div>
       <div className="conservation__wrapper">
         <h2 className="conservation__subtitle">
           Biggest Threats to Marine Life

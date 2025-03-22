@@ -34,7 +34,7 @@ function LoggedInHeader() {
           Connect
         </NavLink>
         <NavLink className="loggedInHeader__links--nature" to="/conservation">
-          Protect our Nature
+          Protect our Ocean
         </NavLink>
       </div>
       <Link to="/profile">

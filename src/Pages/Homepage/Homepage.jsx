@@ -8,7 +8,6 @@ import "../Homepage/HomePage.scss";
 
 function HomePage() {
   const [activeIndex, setActiveIndex] = useState(null);
-  const [imgPanelOpen, isImgPanelOpen] = useState(false);
 
   const panelImgArr = [connectPic, conservationPic, homePic, mapPic];
 
@@ -82,6 +81,7 @@ function HomePage() {
                 surf spots in the world. The powerful waves here are for
                 experienced surfers, but watching pros in action is a must-do!
               </p>
+              <button className="home__cta-btn">Learn More{">>"}</button>
             </li>
             <li className="home__list-item">
               <p className="home__item-name">Jeffrey’s Bay, South Africa</p>
@@ -90,6 +90,7 @@ function HomePage() {
                 Jeffrey’s Bay offers a smooth, fast ride. Perfect for surfers
                 looking to cruise through some of the longest waves out there.
               </p>
+              <button className="home__cta-btn">Learn More{">>"}</button>
             </li>
             <li className="home__list-item">
               <p className="home__item-name">Uluwatu, Bali, Indonesia</p>
@@ -99,6 +100,7 @@ function HomePage() {
                 views, it’s as much about the experience as it is about the
                 waves.
               </p>
+              <button className="home__cta-btn">Learn More{">>"}</button>
             </li>
             <li className="home__list-item">
               <p className="home__item-name">Nazaré, Portugal</p>
@@ -108,6 +110,7 @@ function HomePage() {
                 surfers. If you want to see surfing at its most extreme, Nazaré
                 is the place.
               </p>
+              <button className="home__cta-btn">Learn More{">>"}</button>
             </li>
             <li className="home__list-item">
               <p className="home__item-name">Cerritos, Mexico</p>
@@ -119,6 +122,7 @@ function HomePage() {
                 swells year-round, Cerritos is a must-visit destination for any
                 surfer.
               </p>
+              <button className="home__cta-btn">Learn More{" >>"}</button>
             </li>
           </ul>
           <div className="home__testimonials">
@@ -126,7 +130,6 @@ function HomePage() {
           </div>
         </div>
       </div>
-      <button className="home__cta-btn">Find Your Next Wave</button>
     </div>
   );
 }

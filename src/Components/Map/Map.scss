@@ -37,7 +37,7 @@
   }
 
   button {
-    background: linear-gradient(45deg, #0077b6, #00a8e8);
+    background: linear-gradient(45deg, $bright-blue, #00a8e8);
     color: $white;
     padding: 12px 24px;
     border: none;
@@ -47,7 +47,7 @@
     transition: background 0.3s ease-in-out;
 
     &:hover {
-      background: linear-gradient(45deg, #00a8e8, #0077b6);
+      background: linear-gradient(45deg, #00a8e8, $bright-blue);
       transform: scale(1.1);
     }
 
@@ -64,7 +64,7 @@
 
   .leaflet-popup-content {
     font-size: 1rem;
-    color: $black;
+    color: $dark-grey;
 
     b {
       color: $dark-blue-text;
@@ -75,7 +75,7 @@
 .selected-spot {
   margin-top: 2rem;
   padding: 1rem;
-  background-color: #f7f7f7;
+  background-color: $beige;
   border-radius: 1.25rem;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
 
@@ -87,7 +87,7 @@
 
   p {
     font-size: 1rem;
-    color: $black;
+    color: $dark-grey;
     margin-bottom: 0.5rem;
   }
 }

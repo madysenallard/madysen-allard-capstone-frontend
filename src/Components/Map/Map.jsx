@@ -3,7 +3,7 @@ import { MapContainer, TileLayer, Marker, Popup, useMap } from "react-leaflet";
 import axios from "axios";
 import "../Map/Map.scss";
 
-const BASE_URL = import.meta.env.VITE_BASE_URL; // Your backend server URL
+const BASE_URL = import.meta.env.VITE_BASE_URL;
 const worldWeatherApiKey = import.meta.env.VITE_WORLD_WEATHER_API_KEY;
 
 function Map() {
@@ -19,7 +19,7 @@ function Map() {
     const map = useMap();
 
     useEffect(() => {
-      map.setView(center, zoom); // Update the map's center and zoom level
+      map.setView(center, zoom);
     }, [center, zoom, map]);
 
     return null;

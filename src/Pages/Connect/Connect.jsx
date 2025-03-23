@@ -4,6 +4,8 @@ import "../Connect/Connect.scss";
 import { useState } from "react";
 import closeIcon from "../../Assets/Icons/close-icon.svg";
 
+const BASE_URL = import.meta.env.VITE_BASE_URL;
+
 function Connect({ isLoggedIn }) {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [photo, setPhoto] = useState(null);
@@ -20,16 +22,12 @@ function Connect({ isLoggedIn }) {
     formData.append("caption", caption);
 
     try {
-      const response = await axios.post(
-        "http://localhost:8080/api/photos",
-        formData,
-        {
-          headers: {
-            "Content-Type": "multipart/form-data",
-            Authorization: `Bearer ${localStorage.getItem("token")}`,
-          },
-        }
-      );
+      const response = await axios.post(`${BASE_URL}/api/photos`, formData, {
+        headers: {
+          "Content-Type": "multipart/form-data",
+          Authorization: `Bearer ${localStorage.getItem("token")}`,
+        },
+      });
       if (response.status === 201) {
         alert("Photo uploaded successfully!");
         setIsModalOpen(false);
@@ -66,7 +64,7 @@ function Connect({ isLoggedIn }) {
             className="connect__post-btn"
             onClick={() => setIsModalOpen(true)}
           >
-            Create New Post
+            + Create New Post
           </button>
         )}
         <form className="connect__search-bar" onSubmit={handleSearch}>

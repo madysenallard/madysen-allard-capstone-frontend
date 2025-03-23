@@ -1,9 +1,36 @@
 $dark-blue-background: #1b5165;
-$black: #333;
+$dark-grey: #333;
 $light-blue: #9adbf2;
 $dark-blue-text: #021648;
 $white: #ffffff;
 $pastel-blue: #e1f7ff;
+$bright-blue: #0077b6;
+$beige: #f7f7f7;
+$light-grey: #777;
+$yellow: #ffd700;
+$royal-blue: #005f8c;
+$pastel-background: #f0f8ff;
 
 $tablet-width: 768px;
 $desktop-width: 1280px;
+
+// Font Sizes
+$font-size-xs: 0.75rem; // 12px
+$font-size-sm: 0.875rem; // 14px
+$font-size-base: 1rem; // 16px
+$font-size-md: 1.25rem; // 20px
+$font-size-lg: 1.5rem; // 24px
+$font-size-xl: 2rem; // 32px
+$font-size-xxl: 2.5rem; // 40px
+
+// Spacing
+$spacing-xs: 0.5rem;
+$spacing-sm: 1rem;
+$spacing-md: 1.5rem;
+$spacing-lg: 2rem;
+$spacing-xl: 3rem;
+
+// Border Radius
+$border-radius-sm: 0.3rem;
+$border-radius-md: 0.625rem;
+$border-radius-lg: 1.25rem;

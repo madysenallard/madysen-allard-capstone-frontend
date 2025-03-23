@@ -3,8 +3,9 @@
 
 .home {
   width: 100%;
-  color: $black;
+  color: $dark-grey;
   padding: 1rem 0;
+  background-color: $pastel-background;
 
   @include tablet {
     padding: 2rem 0;
@@ -33,6 +34,7 @@
     letter-spacing: 0.2rem;
     padding-top: 1.25rem;
     width: 100%;
+    font-family: "Winky Sans Regular";
 
     @include tablet {
       font-size: 5rem;
@@ -45,6 +47,8 @@
     font-style: italic;
     letter-spacing: 0.2rem;
     padding-left: 4rem;
+    font-family: "Winky Sans Regular";
+
     @include tablet {
       font-size: 2rem;
       letter-spacing: 0.3rem;
@@ -57,6 +61,7 @@
     line-height: 1.65rem;
     padding-top: 4.5rem;
     color: $white;
+    font-family: "Winky Sans Regular";
 
     @include tablet {
       font-size: 1.5rem;
@@ -66,14 +71,13 @@
       padding: 3rem;
       width: 70%;
     }
-    @include desktop {
-    }
   }
 
   &__desc-title {
     padding: 1rem;
     font-size: 1.5rem;
     font-weight: 600;
+    font-family: "Winky Sans Regular";
 
     @include tablet {
       font-size: 2.5rem;
@@ -89,6 +93,7 @@
     height: 700px;
     margin-bottom: 2rem;
     padding: 1rem;
+
     @include tablet {
       width: 100%;
       height: 700px;
@@ -112,6 +117,7 @@
     margin-bottom: 1rem;
     border: 3px solid transparent;
     background-clip: padding-box;
+
     @include tablet {
       flex: 0.5;
       max-height: 600px;
@@ -167,6 +173,8 @@
     font-size: 1.25rem;
     font-weight: 500;
     padding-bottom: 0.5rem;
+    font-family: "Winky Sans Regular";
+
     @include tablet {
       font-size: 1.5rem;
     }
@@ -174,15 +182,10 @@
 
   &__panel-desc {
     padding-top: 0.5rem;
-    font-size: 1.25rem;
-  }
+    font-size: 1rem;
 
-  &__panel-content {
-    font-size: 0.875rem;
-    line-height: 1.125rem;
-    display: none;
-    .active & {
-      display: block;
+    @include tablet {
+      font-size: 1.25rem;
     }
   }
 
@@ -195,31 +198,57 @@
     }
   }
 
-  &__main-content {
-    margin: 0 auto;
-    display: flex;
-    background-color: #f7f7f7;
-    padding-left: 2rem;
-    border-radius: 1.25rem;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-    margin-bottom: 1rem;
-  }
-
   &__bottom-title {
-    font-size: 1.5rem;
-    font-weight: 600;
-    padding: 50px 0;
-    color: $black;
+    color: $dark-blue-text;
+    font-size: 1.75rem;
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 30px;
+    font-family: "Winky Sans Regular";
 
     @include tablet {
       font-size: 2.5rem;
+      text-align: left;
     }
   }
+
+  &__main-content {
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    background: url("../../Assets/Photos/sand-wallpaper.jpeg") center;
+    padding: 1rem;
+    border-radius: 1.25rem;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 1rem;
+
+    @include tablet {
+      flex-direction: row;
+      padding-left: 2rem;
+    }
+  }
+
   &__surf-list {
     list-style-type: none;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    width: 100%;
+
+    @include tablet {
+      width: 50%;
+    }
+  }
+
+  &__testimonials {
+    width: 100%;
+    margin-top: 2rem;
+
+    @include tablet {
+      width: 50%;
+      margin-top: 0;
+      margin-left: 2rem;
+    }
   }
 
   &__list-item {
@@ -229,23 +258,20 @@
     overflow: hidden;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     position: relative;
-    border-left: 5px solid #f0f8ff;
+    border-left: 5px solid $pastel-background;
     padding: 1rem;
     background-color: $white;
+
     &:hover {
       transform: translateY(-5px);
       box-shadow: 0 12px 20px rgba(0, 0, 0, 0.15);
-    }
-
-    @include tablet {
-      height: 165px;
     }
   }
 
   &__item-name {
     font-size: 1.25rem;
     font-weight: 700;
-    color: #0077b6;
+    color: $bright-blue;
     padding-bottom: 1rem;
 
     @include tablet {
@@ -257,15 +283,17 @@
     font-size: 1rem;
     color: #555;
     font-weight: 500;
+
     @include tablet {
       font-size: 1.125rem;
+      padding-bottom: 2.5rem;
     }
   }
 
   &__cta-btn {
     color: $white;
     padding: 0.65rem 1rem;
-    border: 2px solid #f0f8ff;
+    border: 2px solid $pastel-background;
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 0.1rem;
@@ -274,14 +302,19 @@
     transition: all 0.3s ease-in-out;
     border-radius: 1.5rem;
     background: transparent;
-    color: #0077b6;
+    color: $bright-blue;
     position: absolute;
     right: 0;
     bottom: 0;
     margin: 1rem;
+    display: none;
+
+    @include tablet {
+      display: flex;
+    }
 
     &:hover {
-      background: linear-gradient(45deg, #00a8e8, #0077b6);
+      background: linear-gradient(45deg, #00a8e8, $bright-blue);
       transform: scale(1.05);
       color: white;
       border: none;

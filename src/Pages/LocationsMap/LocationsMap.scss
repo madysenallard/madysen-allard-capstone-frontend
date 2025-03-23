@@ -4,9 +4,9 @@
 .locationsMap {
   width: 100%;
   padding: 1rem;
-  color: $black;
+  color: $dark-grey;
   min-height: 100vh;
-  background-color: #f7f7f7;
+  background-color: $beige;
   background: url("../../Assets/Photos/sand-wallpaper.jpeg") center;
 
   @include tablet {
@@ -18,11 +18,53 @@
     padding: 1.25rem;
     width: 100%;
     color: $dark-blue-text;
-    margin-top: 3rem;
+    margin-top: 12rem;
     text-align: center;
+    font-family: "Winky Sans Regular";
 
     @include tablet {
       font-size: 3rem;
+      margin-top: 3rem;
+    }
+  }
+
+  &__desc {
+    list-style-type: none;
+    background-color: rgba(255, 255, 255, 0.6);
+    border-radius: 12px;
+    padding: 1rem;
+  }
+
+  &__desc-title {
+    font-family: "Winky Sans Regular";
+    font-size: 2rem;
+    padding-bottom: 1rem;
+    text-align: center;
+  }
+
+  &__list-item {
+    font-size: 1.25rem;
+    line-height: 1.6;
+    color: $dark-grey;
+    margin-bottom: 1rem;
+    padding-left: 1.5rem;
+    position: relative;
+    animation: fadeInLeft 1s ease-in-out;
+    font-family: "Winky Sans Regular";
+
+    &::before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      color: $dark-grey;
+      font-size: 1.25rem;
+      line-height: 1;
+    }
+
+    &:hover {
+      transform: translateX(10px);
+      transition: transform 0.3s ease-in-out;
+      color: $dark-blue-text;
     }
   }
 }

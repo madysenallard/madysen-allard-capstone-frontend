@@ -1,12 +1,12 @@
 import axios from "axios";
-import userIcon from "../../Assets/Icons/user.svg";
+import userIconWhite from "../../Assets/Icons/user-white.svg";
 import accountIcon from "../../Assets/Icons/account.svg";
 import lockIcon from "../../Assets/Icons/lock.svg";
 import "../LoginBox/LoginBox.scss";
 import { Link, useNavigate } from "react-router-dom";
 import { useState, useRef } from "react";
 
-// const BASE_URL=
+const BASE_URL = import.meta.env.VITE_BASE_URL;
 
 function LoginBox({ setToken }) {
   const [error, setError] = useState(null);
@@ -39,13 +39,10 @@ function LoginBox({ setToken }) {
 
           // contains the token
           try {
-            const { data } = await axios.post(
-              "http://localhost:8080/api/login",
-              {
-                username,
-                password,
-              }
-            );
+            const { data } = await axios.post(`${BASE_URL}/api/login`, {
+              username,
+              password,
+            });
 
             const { token } = data;
 
@@ -67,7 +64,7 @@ function LoginBox({ setToken }) {
           <div className="loginBox__field-container">
             <img
               className="loginBox__user-profile"
-              src={userIcon}
+              src={userIconWhite}
               alt="user icon"
             />
             <input

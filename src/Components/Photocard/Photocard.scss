@@ -75,12 +75,12 @@
 
   &__location {
     font-size: 0.75rem;
-    color: #777;
+    color: $light-grey;
   }
 
   &__caption {
     font-size: 0.875rem;
-    color: $black;
+    color: $dark-grey;
     line-height: 1.4;
   }
 }

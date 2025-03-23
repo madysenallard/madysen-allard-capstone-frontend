@@ -3,6 +3,8 @@ import React, { useState, useEffect } from "react";
 import "../PhotocardList/PhotocardList.scss";
 import axios from "axios";
 
+const BASE_URL = import.meta.env.VITE_BASE_URL;
+
 function PhotocardList() {
   const [photos, setPhotos] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -12,7 +14,7 @@ function PhotocardList() {
     async function fetchPhotos() {
       try {
         setLoading(true);
-        const response = await axios.get("http://localhost:8080/api/photos");
+        const response = await axios.get(`${BASE_URL}/api/photos`);
         setPhotos(response.data);
         setLoading(false);
       } catch (error) {

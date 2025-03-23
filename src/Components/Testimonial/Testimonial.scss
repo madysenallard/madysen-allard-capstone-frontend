@@ -2,7 +2,7 @@
 @use "../../Styles/partials/mixins" as *;
 
 .testimonial-card {
-  background-color: #f0f8ff;
+  background-color: $pastel-background;
   padding: 30px;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -19,7 +19,7 @@
 
   &__stars {
     font-size: 1.5rem;
-    color: #ffd700;
+    color: $yellow;
     margin-bottom: 15px;
   }
 
@@ -32,7 +32,7 @@
 
   &__name {
     font-weight: bold;
-    color: #333;
+    color: $dark-grey;
   }
 
   &__location {
@@ -41,6 +41,6 @@
 
   &__user-info {
     font-size: 0.9rem;
-    color: #777;
+    color: $light-grey;
   }
 }

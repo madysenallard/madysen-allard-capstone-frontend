@@ -6,6 +6,8 @@ import moreIcon from "../../Assets/Icons/more-icon.svg";
 import favoriteIcon from "../../Assets/Icons/favorite-icon.svg";
 import userIcon from "../../Assets/Icons/account-black.svg";
 
+const BASE_URL = import.meta.env.VITE_BASE_URL;
+
 function Photocard({ photo }) {
   const [photoData, setPhotoData] = useState(photo);
 
@@ -14,7 +16,7 @@ function Photocard({ photo }) {
       async function getPhoto() {
         try {
           const response = await axios.get(
-            `http://localhost:8080/api/photos/${photo.id}`
+            `${BASE_URL}/api/photos/${photo.id}`
           );
           setPhotoData(response.data);
         } catch (error) {

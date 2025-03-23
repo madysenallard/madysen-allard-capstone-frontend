@@ -3,18 +3,30 @@
 
 .header {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-  background-color: $white;
-  padding: 1rem 2rem;
+  flex-direction: column;
+  background-color: $pastel-blue;
+  padding: 1rem;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   position: fixed;
   z-index: 100;
   width: 100%;
 
   @include tablet {
+    flex-direction: row;
+    align-items: center;
     padding: 1rem 2rem;
-    gap: 3rem;
+    background-color: $white;
+  }
+
+  &__top-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+
+    @include tablet {
+      width: auto;
+    }
   }
 
   &__logo-wrapper {
@@ -39,19 +51,28 @@
   &__container--Logo {
     width: 2rem;
     height: auto;
+    display: none;
 
     @include tablet {
       width: 2.5rem;
+      display: flex;
     }
   }
 
   &__links {
     display: flex;
+    flex-direction: column;
     align-items: center;
     gap: 0.75rem;
+    width: 100%;
+    margin-top: 1rem;
 
     @include tablet {
+      flex-direction: row;
+      align-items: center;
+      margin-top: 0;
       gap: 1.25rem;
+      width: auto;
     }
 
     &--home,
@@ -59,46 +80,58 @@
     &--connect,
     &--nature {
       text-decoration: none;
-      font-size: 1rem;
+      font-size: 0.875rem;
       font-weight: 500;
-      color: $black;
+      color: $dark-grey;
       transition: color 0.3s ease;
-      border-right: 1px solid $black;
-      padding-right: 1rem;
+      border-right: none;
+      padding-right: 0;
 
       &:hover {
-        color: #0077b6;
-        border-color: #0077b6;
+        color: $bright-blue;
       }
 
       @include tablet {
-        font-size: 1.125rem;
-        padding-right: 1.25rem;
+        border-right: 1px solid $dark-grey;
+        padding-right: 1rem;
+        font-size: 1rem;
       }
     }
 
     &--home {
-      border: none;
+      font-size: 1.15rem;
       font-weight: 600;
+      text-transform: uppercase;
+
+      @include tablet {
+        border-right: 1px solid $dark-grey;
+      }
     }
   }
 
   &__btn-wrapper {
     display: flex;
     align-items: center;
+    justify-content: center;
     gap: 0.75rem;
+    margin-top: 1rem;
+    width: 100%;
 
     @include tablet {
       gap: 1.25rem;
+      margin-top: 0;
+      margin-left: auto;
+      justify-content: flex-end;
+      width: auto;
     }
   }
 
   &__login-btn,
   &__register-btn {
     background-color: transparent;
-    color: #333;
+    color: $dark-grey;
     padding: 0.5rem 1rem;
-    border: 2px solid #333;
+    border: 2px solid $dark-grey;
     border-radius: 0.3rem;
     font-size: 0.875rem;
     cursor: pointer;

@@ -2,36 +2,75 @@
 @use "../../Styles/partials/mixins" as *;
 
 .conservation {
-  background: url("../../Assets/Photos/whale-background.jpg") center/cover
-    no-repeat;
-  background-size: cover;
-  background-position: center;
+  background-color: $pastel-background;
   color: $dark-blue-text;
-  padding: 2rem 0;
+  padding: 1rem 0;
+
+  @include tablet {
+    padding: 2rem 0;
+  }
 
   &__header {
-    background-color: $light-blue;
+    background: url("../../Assets/Photos/whale-background.jpg") center/cover
+      no-repeat;
     width: 100%;
-    height: 300px;
-    margin-top: 2rem;
+    height: 400px;
+    margin-top: 8rem;
     padding: 1rem;
-    margin-bottom: 4rem;
+    margin-bottom: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: relative;
+    overflow: hidden;
 
     @include tablet {
+      height: 300px;
+      margin-top: 2rem;
       padding: 2rem;
+      margin-bottom: 4rem;
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.4);
+      z-index: 1;
     }
   }
 
-  &__title {
-    font-size: 2.5rem;
-    font-weight: 700;
-    text-align: center;
+  &__title-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
     margin-bottom: 1.5rem;
-    color: $dark-blue-text;
+  }
+
+  &__icon {
+    padding: 0;
+    margin: 0;
+    width: 1.875rem;
+    height: 1.875rem;
+  }
+
+  &__title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: $white;
+    z-index: 2;
     animation: fadeIn 1.5s ease-in-out;
+    font-family: "Winky Sans Regular";
 
     @include tablet {
-      font-size: 3rem;
+      font-size: 2.5rem;
     }
 
     @include desktop {
@@ -40,29 +79,30 @@
   }
 
   &__description {
-    font-size: 1.25rem;
+    font-size: 1rem;
     line-height: 1.6;
-    text-align: center;
-    margin-bottom: 2rem;
-    color: $dark-blue-text;
+    padding-top: 1rem;
+    color: $white;
+    z-index: 2;
     animation: slideIn 1s ease-in-out;
 
     @include tablet {
-      font-size: 1.5rem;
+      font-size: 1.25rem;
     }
   }
 
   &__wrapper {
-    background-color: rgba(255, 255, 255, 0.6);
+    background-color: $white;
     border-radius: 0.625rem;
-    padding: 2rem;
-    margin: 2rem;
+    padding: 1rem;
+    margin: 1rem;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     animation: fadeInUp 1s ease-in-out;
+    position: relative;
 
     @include tablet {
-      padding: 2.5rem;
-      margin: 2.5rem;
+      padding: 2rem;
+      margin: 2rem;
     }
 
     @include desktop {
@@ -78,25 +118,27 @@
   }
 
   &__subtitle {
-    font-size: 2rem;
+    font-size: 1.5rem;
     font-weight: 600;
-    margin-bottom: 1.5rem;
     color: $dark-blue-background;
     animation: fadeIn 1s ease-in-out;
+    font-family: "Winky Sans Regular";
+    text-align: center;
 
     @include tablet {
-      font-size: 2.25rem;
+      font-size: 2rem;
     }
   }
 
   &__text {
-    font-size: 1rem;
+    font-size: 0.875rem;
     line-height: 1.6;
-    color: $black;
+    color: $dark-grey;
     animation: fadeIn 1.5s ease-in-out;
+    padding-top: 1rem;
 
     @include tablet {
-      font-size: 1.125rem;
+      font-size: 1rem;
     }
   }
 
@@ -108,9 +150,9 @@
   }
 
   &__list-item {
-    font-size: 1rem;
+    font-size: 0.875rem;
     line-height: 1.6;
-    color: $black;
+    color: $dark-grey;
     margin-bottom: 1rem;
     padding-left: 1.5rem;
     position: relative;
@@ -126,7 +168,7 @@
     }
 
     @include tablet {
-      font-size: 1.125rem;
+      font-size: 1rem;
     }
 
     &:hover {
@@ -137,9 +179,9 @@
   }
 
   &__list-item-2 {
-    font-size: 1rem;
+    font-size: 0.875rem;
     line-height: 1.6;
-    color: $black;
+    color: $dark-grey;
     margin-bottom: 1rem;
     padding-left: 1.5rem;
     position: relative;
@@ -155,13 +197,49 @@
     }
 
     @include tablet {
-      font-size: 1.125rem;
+      font-size: 1rem;
     }
 
     &:hover {
       transform: translateX(10px);
       transition: transform 0.3s ease-in-out;
       color: $dark-blue-background;
+    }
+  }
+
+  &__btn {
+    color: $white;
+    padding: 0.5rem 1rem;
+    border: 2px solid $pastel-background;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+    font-size: 0.75rem;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    border-radius: 1.5rem;
+    background: transparent;
+    color: $bright-blue;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    margin: 0.5rem;
+
+    @include tablet {
+      padding: 0.65rem 1rem;
+      font-size: 0.8rem;
+      margin: 1rem;
+    }
+
+    &:hover {
+      background: linear-gradient(45deg, #00a8e8, $bright-blue);
+      transform: scale(1.05);
+      color: white;
+      border: none;
+    }
+
+    &:active {
+      transform: scale(0.95);
     }
   }
 

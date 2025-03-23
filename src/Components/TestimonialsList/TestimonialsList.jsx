@@ -29,9 +29,9 @@ function TestimonialsList() {
 
   return (
     <section className="testimonials">
-      <div className="container">
-        <h2 className="title">What Surfers Say</h2>
-        <div className="testimonial-list">
+      <div className="testimonials__container">
+        <h2 className="testimonials__title">What Surfers Say</h2>
+        <div className="testimonials__testimonial-list">
           {testimonialContent.map((testimonial, index) => (
             <TestimonialCard key={index} {...testimonial} />
           ))}

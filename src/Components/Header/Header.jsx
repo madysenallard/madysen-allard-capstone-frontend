@@ -8,21 +8,21 @@ function Header() {
 
   return (
     <section className="header">
-      <div className="header__logo-wrapper">
-        <NavLink to="/" className="header__container--home">
-          <img
-            className="header__container--Logo"
-            src={surfLogo}
-            alt="surf logo"
-          />
-        </NavLink>
-        <div className="header__links">
-          <NavLink className="header__links--home" to="/">
-            Home
+      <div className="header__top-row">
+        <div className="header__logo-wrapper">
+          <NavLink to="/" className="header__container--home">
+            <img
+              className="header__container--Logo"
+              src={surfLogo}
+              alt="surf logo"
+            />
           </NavLink>
         </div>
       </div>
       <div className="header__links">
+        <NavLink className="header__links--home" to="/">
+          Home
+        </NavLink>
         <NavLink className="header__links--maps-weather" to="/maps+weather">
           Maps & Weather
         </NavLink>

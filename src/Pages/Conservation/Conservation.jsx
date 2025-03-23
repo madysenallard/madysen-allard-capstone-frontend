@@ -1,4 +1,6 @@
 import "../Conservation/Conservation.scss";
+import surfIcon from "../../Assets/Icons/surfing.svg";
+import waveIcon from "../../Assets/Icons/wave.svg";
 
 function Conservation() {
   return (
@@ -15,6 +17,7 @@ function Conservation() {
           that brings us so much joy.
         </h3>
       </div>
+
       <div className="conservation__wrapper">
         <h2 className="conservation__subtitle">
           Biggest Threats to Marine Life
@@ -32,8 +35,14 @@ function Conservation() {
           become ocean advocates.
         </p>
       </div>
+
       <div className="conservation__wrapper">
-        <h2 className="conservation__subtitle">The Conscious Surfer's Guide</h2>
+        <div className="conservation__title-wrapper">
+          <h2 className="conservation__subtitle">
+            The Conscious Surfer's Guide
+          </h2>
+          <img className="conservation__icon" src={surfIcon} alt="surf icon" />
+        </div>
         <ul className="conservation__list">
           <li className="conservation__list-item">
             Respect Marine Life – Avoid disturbing wildlife, stay clear of
@@ -53,9 +62,16 @@ function Conservation() {
             sunscreen and biodegradable soaps.
           </li>
         </ul>
+        <button className="conservation__btn">Learn More{" >>"}</button>
       </div>
+
       <div className="conservation__wrapper">
-        <h2 className="conservation__subtitle">Partners in Ocean Protection</h2>
+        <div className="conservation__title-wrapper">
+          <h2 className="conservation__subtitle">
+            Partners in Ocean Protection
+          </h2>
+          <img className="conservation__icon" src={waveIcon} alt="wave icon" />
+        </div>
         <ul className="conservation__list-2">
           <li className="conservation__list-item-2">
             Surfrider Foundation - Their chapter network organizes regular beach
@@ -78,6 +94,7 @@ function Conservation() {
             cleanups at popular surf spots.
           </li>
         </ul>
+        <button className="conservation__btn">Learn More{" >>"}</button>
       </div>
     </section>
   );

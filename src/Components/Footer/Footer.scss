@@ -4,7 +4,7 @@
 .footer {
   width: 100%;
   padding: 2rem 1rem;
-  background-color: #f7f7f7;
+  background-color: $white;
 
   @include tablet {
     padding: 3rem 2rem;

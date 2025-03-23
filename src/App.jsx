@@ -14,6 +14,8 @@ import axios from "axios";
 import Header from "./Components/Header/Header.jsx";
 import LoggedInHeader from "./Components/LoggedInHeader/LoggedInHeader.jsx";
 
+const BASE_URL = import.meta.env.VITE_BASE_URL;
+
 function App() {
   const [token, setToken] = useState(localStorage.getItem("token"));
   const [user, setUser] = useState(null);
@@ -35,14 +37,11 @@ function App() {
       // if the token got passed in, get the user profile...
       if (token) {
         try {
-          const { data } = await axios.get(
-            "http://localhost:8080/api/profile",
-            {
-              headers: {
-                Authorization: `Bearer ${token}`,
-              },
-            }
-          );
+          const { data } = await axios.get(`${BASE_URL}/api/profile`, {
+            headers: {
+              Authorization: `Bearer ${token}`,
+            },
+          });
 
           setUser(data);
         } catch (e) {

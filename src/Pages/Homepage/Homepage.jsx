@@ -59,12 +59,16 @@ function HomePage() {
               src={imgUrl}
               alt={textContent[index].title}
             />
-            <div className="home__panel-content">
-              <h3 className="home__panel-title">{textContent[index].title}</h3>
-              <p className="home__panel-desc">
-                {textContent[index].description}
-              </p>
-            </div>
+            {index === activeIndex && (
+              <div className="home__panel-content">
+                <h3 className="home__panel-title">
+                  {textContent[index].title}
+                </h3>
+                <p className="home__panel-desc">
+                  {textContent[index].description}
+                </p>
+              </div>
+            )}
           </div>
         ))}
       </div>
@@ -118,9 +122,7 @@ function HomePage() {
                 Cerritos is a hidden gem for surfers, offering consistent waves
                 and a laid-back vibe. Known for its smooth point breaks and
                 beginner-friendly surf, it’s also a great spot for experienced
-                surfers looking for long rides. With warm waters and reliable
-                swells year-round, Cerritos is a must-visit destination for any
-                surfer.
+                surfers looking for long rides.
               </p>
               <button className="home__cta-btn">Learn More{" >>"}</button>
             </li>

@@ -1,4 +1,4 @@
-import userIcon from "../../Assets/Icons/user.svg";
+import userIconWhite from "../../Assets/Icons/user-white.svg";
 import lockIcon from "../../Assets/Icons/lock.svg";
 import registerIcon from "../../Assets/Icons/register.svg";
 import "../RegisterBox/RegisterBox.scss";
@@ -6,7 +6,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { useState, useRef } from "react";
 import axios from "axios";
 
-// const BASE_URL=
+const BASE_URL = import.meta.env.VITE_BASE_URL;
 
 function RegisterBox() {
   const [signedup, setSignedup] = useState(false);
@@ -40,7 +40,7 @@ function RegisterBox() {
 
           try {
             // all we do here is signup.
-            await axios.post("http://localhost:8080/api/register", {
+            await axios.post(`${BASE_URL}/api/register`, {
               username,
               password,
             });
@@ -63,7 +63,7 @@ function RegisterBox() {
           <div className="registerBox__field-container">
             <img
               className="registerBox__user-profile"
-              src={userIcon}
+              src={userIconWhite}
               alt="user icon"
             />
             <input

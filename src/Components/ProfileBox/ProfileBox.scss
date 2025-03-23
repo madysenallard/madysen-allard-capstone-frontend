@@ -13,11 +13,12 @@
     max-width: 400px;
     font-family: sans-serif;
     background-color: rgba(225, 247, 255, 0.6);
-    margin-top: 8rem;
     position: relative;
+    margin-top: 21rem;
 
     @include tablet {
       max-width: 450px;
+      margin-top: 8rem;
     }
 
     @include desktop {
@@ -71,7 +72,7 @@
       border-radius: 0.3rem;
 
       &:hover {
-        background: linear-gradient(45deg, #00a8e8, #0077b6);
+        background: linear-gradient(45deg, #00a8e8, $bright-blue);
         transform: scale(1.05);
       }
 
@@ -86,8 +87,8 @@
       }
 
       &--logout {
-        background: linear-gradient(45deg, #0077b6, #00a8e8);
-        color: #333;
+        background: linear-gradient(45deg, $bright-blue, #00a8e8);
+        color: $dark-grey;
       }
     }
   }
@@ -108,8 +109,8 @@
     text-transform: uppercase;
     letter-spacing: 0.1rem;
     align-items: center;
-    font-size: 1.5rem;
-    color: #333;
+    font-size: 1rem;
+    color: $dark-grey;
     transition: color 0.3s ease-in-out;
     position: absolute;
     top: 0;
@@ -121,8 +122,12 @@
     border-radius: 45px;
 
     &:hover {
-      color: #0077b6;
-      border-color: #0077b6;
+      color: $bright-blue;
+      border-color: $bright-blue;
+    }
+
+    @include tablet {
+      font-size: 1.25rem;
     }
   }
 

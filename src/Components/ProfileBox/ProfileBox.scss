@@ -1,0 +1,134 @@
+@use "../../Styles/partials/variables" as *;
+@use "../../Styles/partials/mixins" as *;
+
+.profileBox {
+  &__card {
+    background-color: $pastel-blue;
+    border-radius: $border-radius-md;
+    padding: $spacing-xl $spacing-lg;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: $spacing-xl auto;
+    text-align: center;
+    width: 90%;
+    max-width: 400px;
+    font-family: sans-serif;
+    background-color: rgba(225, 247, 255, 0.6);
+    position: relative;
+    margin-top: 21rem;
+
+    @include tablet {
+      margin-top: 8rem;
+    }
+
+    @include desktop {
+      max-width: 400px;
+    }
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-sm;
+  }
+
+  &__fields {
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-md;
+  }
+
+  &__field-container {
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-xs;
+  }
+
+  &__field {
+    @include input;
+  }
+
+  &__btn {
+    @include button($bright-blue, $white, #00a8e8);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+    font-size: $font-size-base;
+    // color: $white;
+    // padding: 0.75rem 1.5rem;
+    // border: none;
+    // font-weight: 600;
+    // text-transform: uppercase;
+    // letter-spacing: 0.1rem;
+    // font-size: 1rem;
+    // cursor: pointer;
+    // transition: all 0.3s ease-in-out;
+    // border-radius: 0.3rem;
+
+    &:hover {
+      background: linear-gradient(45deg, #00a8e8, $bright-blue);
+      transform: scale(1.05);
+    }
+
+    &:active {
+      transform: scale(0.95);
+    }
+
+    &--save {
+      background-color: $dark-blue-background;
+      color: $white;
+      margin-top: $spacing-sm;
+    }
+
+    &--logout {
+      background: linear-gradient(45deg, $bright-blue, #00a8e8);
+      color: $dark-grey;
+    }
+  }
+
+  &__icon {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin-top: $spacing-lg;
+    margin-bottom: $spacing-md;
+  }
+
+  &__link {
+    text-decoration: none;
+    @include flex(row, flex-start, center, $spacing-xs);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+    font-size: $font-size-base;
+    color: $dark-grey;
+    @include transition(color, 0.3s);
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: $spacing-md 0;
+    margin-left: $spacing-sm;
+    padding: 0 $spacing-xs;
+    background-color: rgba($dark-blue-background, 0.5);
+    border-radius: 45px;
+
+    &:hover {
+      color: $bright-blue;
+      border-color: $bright-blue;
+    }
+
+    @include tablet {
+      font-size: $font-size-md;
+    }
+  }
+
+  &__arrow-icon {
+    height: 40px;
+    width: 30px;
+    fill: $dark-blue-text;
+    transition: fill 0.3s ease-in-out;
+
+    &:hover {
+      fill: $light-blue;
+    }
+  }
+}

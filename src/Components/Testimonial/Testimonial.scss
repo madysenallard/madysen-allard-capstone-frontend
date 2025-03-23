@@ -1,0 +1,46 @@
+@use "../../Styles/partials/variables" as *;
+@use "../../Styles/partials/mixins" as *;
+
+.testimonial-card {
+  background-color: $pastel-background;
+  padding: $spacing-lg;
+  border-radius: $border-radius-md;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 300px;
+  text-align: left;
+  @include transition(all, 0.3s);
+  position: relative;
+  max-width: 100%;
+
+  &:hover {
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    transform: translateY(-5px);
+  }
+
+  &__stars {
+    font-size: $font-size-lg;
+    color: $yellow;
+    margin-bottom: $spacing-md;
+  }
+
+  &__review {
+    font-size: $font-size-base;
+    font-style: italic;
+    color: #555;
+    margin-bottom: $spacing-lg;
+  }
+
+  &__name {
+    font-weight: bold;
+    color: $dark-grey;
+  }
+
+  &__location {
+    color: #999;
+  }
+
+  &__user-info {
+    font-size: $font-size-sm;
+    color: $light-grey;
+  }
+}

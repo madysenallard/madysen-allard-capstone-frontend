@@ -1,0 +1,78 @@
+@use "../../Styles/partials/variables" as *;
+@use "../../Styles/partials/mixins" as *;
+
+.map {
+  margin-top: $spacing-md;
+  overflow: hidden;
+
+  &__search-box {
+    @include flex(row, center, center, 0);
+    margin-bottom: $spacing-sm;
+
+    @include tablet {
+      justify-content: flex-start;
+    }
+  }
+
+  &__search {
+    @include input;
+    width: 70%;
+    margin-right: $spacing-xs;
+
+    @include tablet {
+      width: 50%;
+    }
+  }
+
+  &__search-btn {
+    @include button($bright-blue, $white, #00a8e8);
+    background: linear-gradient(45deg, $bright-blue, #00a8e8);
+    padding: $spacing-xs $spacing-md;
+    border-radius: $border-radius-md;
+    font-size: $font-size-base;
+
+    &:hover {
+      background: linear-gradient(45deg, #00a8e8, $bright-blue);
+      transform: scale(1.1);
+    }
+
+    &:active {
+      transform: scale(0.9);
+    }
+  }
+
+  &__container {
+    height: 500px;
+    width: 100%;
+    border-radius: $border-radius-lg;
+  }
+
+  .leaflet-popup-content {
+    font-size: $font-size-base;
+    color: $dark-grey;
+
+    b {
+      color: $dark-blue-text;
+    }
+  }
+}
+
+.selected-spot {
+  margin-top: $spacing-md;
+  padding: $spacing-sm;
+  background-color: $beige;
+  border-radius: $border-radius-lg;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+
+  h3 {
+    font-size: $font-size-lg;
+    color: $dark-blue-text;
+    margin-bottom: $spacing-sm;
+  }
+
+  p {
+    font-size: $font-size-base;
+    color: $dark-grey;
+    margin-bottom: $spacing-xs;
+  }
+}

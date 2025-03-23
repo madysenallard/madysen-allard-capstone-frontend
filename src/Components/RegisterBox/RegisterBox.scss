@@ -1,0 +1,81 @@
+@use "../../Styles/partials/variables" as *;
+@use "../../Styles/partials/mixins" as *;
+
+.registerBox {
+  &__card {
+    background-color: rgba($pastel-blue, 0.6);
+    border-radius: $border-radius-md;
+    padding: $spacing-xl $spacing-lg;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    text-align: center;
+    width: 90%;
+    max-width: 400px;
+    margin-top: 13rem;
+
+    @include tablet {
+      margin-top: $spacing-xl;
+    }
+
+    @include desktop {
+      max-width: 400px;
+    }
+  }
+
+  &__icon {
+    width: 60px;
+    height: 80px;
+    border-radius: 50%;
+    margin-bottom: $spacing-md;
+  }
+
+  &__user-profile,
+  &__lock {
+    width: 24px;
+    height: 24px;
+  }
+
+  &__form,
+  &__fields {
+    @include flex(column, center, center, $spacing-md);
+  }
+
+  &__field-container {
+    @include flex(row, flex-start, center, $spacing-xs);
+  }
+
+  &__field {
+    @include input;
+  }
+
+  &__btn {
+    @include button($bright-blue, $white, #00a8e8);
+    background: linear-gradient(45deg, $bright-blue, #00a8e8);
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+    font-size: $font-size-base;
+    font-weight: 600;
+
+    &:hover {
+      background: linear-gradient(45deg, #00a8e8, $bright-blue);
+      transform: scale(1.05);
+    }
+
+    &:active {
+      transform: scale(0.95);
+    }
+  }
+
+  &__link {
+    text-decoration: none;
+    font-size: $font-size-base;
+    color: $light-blue;
+    margin-top: $spacing-xs;
+    @include transition(color, 0.3s);
+
+    span {
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.1rem;
+    }
+  }
+}

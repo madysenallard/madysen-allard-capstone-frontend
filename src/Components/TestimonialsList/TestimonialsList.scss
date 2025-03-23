@@ -1,0 +1,32 @@
+@use "../../Styles/partials/variables" as *;
+@use "../../Styles/partials/mixins" as *;
+
+.testimonials {
+  &__container {
+    width: 80%;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  &__title {
+    font-size: $font-size-xl;
+    font-weight: bold;
+    margin-bottom: $spacing-lg;
+    color: $dark-blue-text;
+    font-family: "Winky Sans Regular";
+
+    @include tablet {
+      font-size: $font-size-xxl;
+    }
+  }
+
+  &__testimonial-list {
+    @include flex(row, space-around, center, $spacing-lg);
+    flex-wrap: wrap;
+
+    @include tablet {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+}

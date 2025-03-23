@@ -3,19 +3,19 @@
 
 .locationsMap {
   width: 100%;
-  padding: 1rem;
+  padding: $spacing-sm;
   color: $dark-grey;
   min-height: 100vh;
   background-color: $beige;
   background: url("../../Assets/Photos/sand-wallpaper.jpeg") center;
 
   @include tablet {
-    padding: 2rem;
+    padding: $spacing-md;
   }
 
   &__title {
-    font-size: 2.5rem;
-    padding: 1.25rem;
+    font-size: $font-size-xxl;
+    padding: $spacing-sm;
     width: 100%;
     color: $dark-blue-text;
     margin-top: 12rem;
@@ -24,30 +24,30 @@
 
     @include tablet {
       font-size: 3rem;
-      margin-top: 3rem;
+      margin-top: $spacing-xl;
     }
   }
 
   &__desc {
     list-style-type: none;
-    background-color: rgba(255, 255, 255, 0.6);
-    border-radius: 12px;
-    padding: 1rem;
+    background-color: rgba($white, 0.6);
+    border-radius: $border-radius-md;
+    padding: $spacing-sm;
   }
 
   &__desc-title {
     font-family: "Winky Sans Regular";
-    font-size: 2rem;
-    padding-bottom: 1rem;
+    font-size: $font-size-xl;
+    padding-bottom: $spacing-sm;
     text-align: center;
   }
 
   &__list-item {
-    font-size: 1.25rem;
+    font-size: $font-size-md;
     line-height: 1.6;
     color: $dark-grey;
-    margin-bottom: 1rem;
-    padding-left: 1.5rem;
+    margin-bottom: $spacing-sm;
+    padding-left: $spacing-md;
     position: relative;
     animation: fadeInLeft 1s ease-in-out;
     font-family: "Winky Sans Regular";
@@ -57,13 +57,13 @@
       position: absolute;
       left: 0;
       color: $dark-grey;
-      font-size: 1.25rem;
+      font-size: $font-size-md;
       line-height: 1;
     }
 
     &:hover {
       transform: translateX(10px);
-      transition: transform 0.3s ease-in-out;
+      @include transition(transform, 0.3s);
       color: $dark-blue-text;
     }
   }

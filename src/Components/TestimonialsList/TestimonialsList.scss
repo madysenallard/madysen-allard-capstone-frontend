@@ -9,23 +9,20 @@
   }
 
   &__title {
-    font-size: 1.75rem;
+    font-size: $font-size-xl;
     font-weight: bold;
-    margin-bottom: 30px;
+    margin-bottom: $spacing-lg;
     color: $dark-blue-text;
     font-family: "Winky Sans Regular";
 
     @include tablet {
-      font-size: 2.5rem;
+      font-size: $font-size-xxl;
     }
   }
 
   &__testimonial-list {
-    display: flex;
+    @include flex(row, space-around, center, $spacing-lg);
     flex-wrap: wrap;
-    justify-content: space-around;
-    align-items: center;
-    gap: 30px;
 
     @include tablet {
       flex-direction: column;

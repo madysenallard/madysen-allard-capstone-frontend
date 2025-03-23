@@ -144,7 +144,9 @@ function Map() {
           onChange={(e) => setCity(e.target.value)}
           placeholder="Search for a city"
         />
-        <button onClick={handleSearch}>Search</button>
+        <button className="map__search-btn" onClick={handleSearch}>
+          Search
+        </button>
         {error && <p style={{ color: "red" }}>{error}</p>}
       </div>
       <MapContainer center={center} zoom={zoom} className="map__container">

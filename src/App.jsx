@@ -34,7 +34,7 @@ function App() {
     async function getProfile() {
       console.log(token);
       setLoading(true);
-      // if the token got passed in, get the user profile...
+      // if the token got passed in, get the user profile
       if (token) {
         try {
           const { data } = await axios.get(`${BASE_URL}/api/profile`, {
@@ -48,7 +48,7 @@ function App() {
           console.log(e);
         }
       } else {
-        // ... else, there is no token anymore (logout) reset the user back to null
+        // else, there is no token anymore (logout) reset the user back to null
         setUser(null);
       }
       setLoading(false);

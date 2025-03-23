@@ -8,6 +8,6 @@
 
   @include tablet {
     padding: 3rem 2rem;
-    @include font-style(0.875rem, 1.125rem, 400, sans-serif);
+    @include font-style($font-size-sm, $font-size-md, 400, sans-serif);
   }
 }

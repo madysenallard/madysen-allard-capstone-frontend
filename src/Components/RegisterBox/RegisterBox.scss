@@ -3,9 +3,9 @@
 
 .registerBox {
   &__card {
-    background-color: rgba(225, 247, 255, 0.6);
-    border-radius: 0.625rem;
-    padding: 3rem 2.5rem;
+    background-color: rgba($pastel-blue, 0.6);
+    border-radius: $border-radius-md;
+    padding: $spacing-xl $spacing-lg;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
     text-align: center;
     width: 90%;
@@ -13,8 +13,7 @@
     margin-top: 13rem;
 
     @include tablet {
-      max-width: 450px;
-      margin-top: 4rem;
+      margin-top: $spacing-xl;
     }
 
     @include desktop {
@@ -26,7 +25,7 @@
     width: 60px;
     height: 80px;
     border-radius: 50%;
-    margin-bottom: 1.5rem;
+    margin-bottom: $spacing-md;
   }
 
   &__user-profile,
@@ -37,45 +36,24 @@
 
   &__form,
   &__fields {
-    display: flex;
-    flex-direction: column;
-    gap: 1.2rem;
+    @include flex(column, center, center, $spacing-md);
   }
 
   &__field-container {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
+    @include flex(row, flex-start, center, $spacing-xs);
   }
 
   &__field {
-    width: 100%;
-    padding: 0.75rem;
-    border: none;
-    border-radius: 0.3rem;
-    font-size: 1rem;
-    color: $dark-blue-text;
-    background-color: $white;
-
-    &:focus {
-      outline: none;
-      border: 2px solid $light-blue;
-      box-shadow: 0 0 5px $light-blue;
-    }
+    @include input;
   }
 
   &__btn {
+    @include button($bright-blue, $white, #00a8e8);
     background: linear-gradient(45deg, $bright-blue, #00a8e8);
-    color: $white;
-    padding: 0.75rem 1.5rem;
-    border: none;
     text-transform: uppercase;
     letter-spacing: 0.1rem;
-    font-size: 1rem;
+    font-size: $font-size-base;
     font-weight: 600;
-    cursor: pointer;
-    transition: all 0.3s ease-in-out;
-    border-radius: 0.3rem;
 
     &:hover {
       background: linear-gradient(45deg, #00a8e8, $bright-blue);
@@ -89,10 +67,10 @@
 
   &__link {
     text-decoration: none;
-    font-size: 1rem;
+    font-size: $font-size-base;
     color: $light-blue;
-    margin-top: 0.5rem;
-    transition: color 0.3s ease;
+    margin-top: $spacing-xs;
+    @include transition(color, 0.3s);
 
     span {
       font-weight: 600;

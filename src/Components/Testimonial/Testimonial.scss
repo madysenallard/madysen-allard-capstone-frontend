@@ -3,12 +3,12 @@
 
 .testimonial-card {
   background-color: $pastel-background;
-  padding: 30px;
-  border-radius: 10px;
+  padding: $spacing-lg;
+  border-radius: $border-radius-md;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   width: 300px;
   text-align: left;
-  transition: all 0.3s ease;
+  @include transition(all, 0.3s);
   position: relative;
   max-width: 100%;
 
@@ -18,16 +18,16 @@
   }
 
   &__stars {
-    font-size: 1.5rem;
+    font-size: $font-size-lg;
     color: $yellow;
-    margin-bottom: 15px;
+    margin-bottom: $spacing-md;
   }
 
   &__review {
-    font-size: 1rem;
+    font-size: $font-size-base;
     font-style: italic;
     color: #555;
-    margin-bottom: 20px;
+    margin-bottom: $spacing-lg;
   }
 
   &__name {
@@ -40,7 +40,7 @@
   }
 
   &__user-info {
-    font-size: 0.9rem;
+    font-size: $font-size-sm;
     color: $light-grey;
   }
 }

@@ -180,18 +180,6 @@ function Map() {
           </Marker>
         ))}
       </MapContainer>
-      {selectedSpot && (
-        <div>
-          <h3>{selectedSpot.name}</h3>
-          <p>Latitude: {selectedSpot.lat}</p>
-          <p>Longitude: {selectedSpot.lng}</p>
-          <p>Wave Height: {selectedSpot.weather.waveHeight}m</p>
-          <p>Wind Speed: {selectedSpot.weather.windSpeed} km/h</p>
-          <p>Swell Height: {selectedSpot.weather.swellHeight}m</p>
-          <p>Swell Direction: {selectedSpot.weather.swellDirection}</p>
-          <p>Water Temperature: {selectedSpot.weather.waterTemp}°C</p>
-        </div>
-      )}
     </div>
   );
 }

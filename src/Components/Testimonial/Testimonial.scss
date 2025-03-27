@@ -17,10 +17,19 @@
     transform: translateY(-5px);
   }
 
+  @include desktop {
+    width: 450px;
+    height: auto;
+  }
+
   &__stars {
     font-size: $font-size-lg;
     color: $yellow;
     margin-bottom: $spacing-md;
+
+    @include desktop {
+      font-size: $font-size-xl;
+    }
   }
 
   &__review {
@@ -28,15 +37,27 @@
     font-style: italic;
     color: #555;
     margin-bottom: $spacing-lg;
+
+    @include desktop {
+      font-size: $font-size-md;
+    }
   }
 
   &__name {
     font-weight: bold;
     color: $dark-grey;
+
+    @include desktop {
+      font-size: $font-size-md;
+    }
   }
 
   &__location {
     color: #999;
+
+    @include desktop {
+      font-size: $font-size-base;
+    }
   }
 
   &__user-info {
